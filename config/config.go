@@ -18,7 +18,8 @@ type (
 
 	//Config
 	Config struct {
-		MongoDB MongoDB `mapstructure:"mongodb"`
+		MongoDB    MongoDB `mapstructure:"mongodb"`
+		ServerPort string  `mapstructure:"server_port"`
 	}
 )
 
