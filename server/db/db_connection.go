@@ -9,13 +9,15 @@ import (
 	"github.com/PrathyushaLakkireddy/go-rest-api-example/config"
 )
 
+var cfg *config.Config
+
 var (
 	MongoDbUrl = &mgo.DialInfo{
 		Addrs:    []string{string("localhost")},
 		Timeout:  30 * time.Second,
-		Username: config.MongoDB.Username,
-		Password: config.MongoDB.Password,
-		Database: config.MongoDB.Database,
+		Username: cfg.MongoDB.Username,
+		Password: cfg.MongoDB.Password,
+		Database: cfg.MongoDB.Database,
 	}
 )
 

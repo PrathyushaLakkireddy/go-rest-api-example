@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/PrathyushaLakkireddy/go-rest-api-example/db"
+	"github.com/PrathyushaLakkireddy/go-rest-api-example/server/db"
 )
 
 func init() {
