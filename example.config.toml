@@ -1,0 +1,6 @@
+server_port = "3000"
+
+[mongodb]
+database = "mux_example"
+username = ""
+passowrd = ""
