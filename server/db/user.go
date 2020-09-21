@@ -30,3 +30,27 @@ func UpdateUser(query bson.M, updateObj bson.M) error {
 	err := c.Update(query, updateObj)
 	return err
 }
+
+func GetUser(query bson.M, selectObj bson.M) (user models.User, err error) {
+	cfg, _ := config.ReadFromFile()
+	var c = MongoSession.DB(cfg.MongoDB.Database).C("user")
+
+	err = c.Find(query).Select(selectObj).One(&user)
+	return user, err
+}
+
+func GetAllUsers(query bson.M, selectObj bson.M) (users []models.User, err error) {
+	cfg, _ := config.ReadFromFile()
+	var c = MongoSession.DB(cfg.MongoDB.Database).C("user")
+
+	err = c.Find(query).Select(selectObj).All(&users)
+	return users, err
+}
+
+func DeleteUser(query bson.M) (err error) {
+	cfg, _ := config.ReadFromFile()
+	var c = MongoSession.DB(cfg.MongoDB.Database).C("user")
+
+	err = c.Remove(query)
+	return err
+}
