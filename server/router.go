@@ -11,11 +11,6 @@ import (
 func Router() *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
 
-	// router.PathPrefix(server.StaticDir).Handler(http.StripPrefix(server.StaticDir, http.FileServer(http.Dir("."+server.StaticDir))))
-	// router.Use(logger.Logger)
-	// router.Use(middlewares.Headers)
-	// router.Use(middlewares.ValidateRouteParams)
-
 	count := 0
 
 	for _, route := range user.Routes {
